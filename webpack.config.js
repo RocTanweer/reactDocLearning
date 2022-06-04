@@ -2,7 +2,7 @@ const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/index.js",
   output: {
     filename: "bundle.[hash].js",
@@ -30,9 +30,9 @@ module.exports = {
       },
     ],
   },
-  performance: {
-    hints: false,
-    maxEntrypointSize: 512000,
-    maxAssetSize: 512000,
-  },
+  // performance: {
+  //   hints: false,
+  //   maxEntrypointSize: 512000,
+  //   maxAssetSize: 512000,
+  // },
 };
