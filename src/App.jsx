@@ -1,7 +1,7 @@
 import React from "react";
-import Form from "./Form";
+import FeedbackForm from "./FeedbackForm";
 import "./main.css";
 
-const App = () => <Form />;
+const App = () => <FeedbackForm />;
 
 export default App;
