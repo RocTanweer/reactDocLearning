@@ -1,7 +1,7 @@
 import React from "react";
-import FeedbackForm from "./FeedbackForm";
+import TrafficLight from "./TrafficLight";
 import "./main.css";
 
-const App = () => <FeedbackForm />;
+const App = () => <TrafficLight />;
 
 export default App;
