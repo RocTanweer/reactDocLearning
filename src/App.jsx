@@ -1,7 +1,7 @@
 import React from "react";
-import TrafficLight from "./TrafficLight";
+import RequestTracker from "./RequestTracker";
 import "./main.css";
 
-const App = () => <TrafficLight />;
+const App = () => <RequestTracker />;
 
 export default App;
