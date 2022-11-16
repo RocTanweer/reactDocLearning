@@ -1,10 +1,10 @@
 import React from "react";
-import ScoreBoard from "./ScoreBoard.jsx";
 import "./main.css";
+import ShoppingCart from "./ShoppingCart.jsx";
 
 const App = () => (
   <>
-    <ScoreBoard />
+    <ShoppingCart />
   </>
 );
 
