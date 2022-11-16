@@ -24,8 +24,7 @@ function ShoppingCart() {
   function handleIncreaseClick(id) {
     const newProducts = products.map((product) => {
       if (product.id === id) {
-        product.count++;
-        return product;
+        return { ...product, count: product.count + 1 };
       } else {
         return product;
       }
