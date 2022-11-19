@@ -10,7 +10,7 @@ function Task({ id, title, done, handleDeleteTask, handleChangeTask }) {
   }
 
   return (
-    <li key={id} className="flex space-x-2 mt-2">
+    <li key={id} className="flex  space-x-2 mt-2">
       <label>
         <input type="checkbox" checked={done} onChange={(e) => handleChangeTask(id, "done", e.target.checked)} />
         {isEdit ? <input type="text" value={newTitle} onChange={(e) => setNewTitle(e.target.value)} className="border-2 p-0.5 rounded-md mr-1" /> : title}
