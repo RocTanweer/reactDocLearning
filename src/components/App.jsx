@@ -1,20 +1,41 @@
 import React, { useState } from "react";
-import Chat from "./Chat.jsx";
-import ContactList from "./ContactList.jsx";
-
-const contacts = [
-  { id: 0, name: "Taylor", email: "taylor@mail.com" },
-  { id: 1, name: "Alice", email: "alice@mail.com" },
-  { id: 2, name: "Bob", email: "bob@mail.com" },
-];
+import Form from "./Form.jsx";
 
 function App() {
-  const [to, setTo] = useState(contacts[0]);
+  const [showHint, setShowHint] = useState(false);
+  if (showHint) {
+    return (
+      <div>
+        <Form />
+      </div>
+    );
+  }
 
   return (
     <div>
-      <ContactList contacts={contacts} selectedContact={to} onSelect={(contact) => setTo(contact)} />
-      <Chat key={to.id} contact={to} />
+      {showHint && (
+        <p>
+          <i>Hint: Your favorite city?</i>
+        </p>
+      )}
+      <Form />
+      {showHint ? (
+        <button
+          onClick={() => {
+            setShowHint(false);
+          }}
+        >
+          Hide hint
+        </button>
+      ) : (
+        <button
+          onClick={() => {
+            setShowHint(true);
+          }}
+        >
+          Show hint
+        </button>
+      )}
     </div>
   );
 }
