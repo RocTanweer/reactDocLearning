@@ -1,10 +1,10 @@
 import React from "react";
 import PlaceImage from "./PlaceImage.jsx";
 
-function Place({ place, imageSize }) {
+function Place({ place }) {
   return (
     <>
-      <PlaceImage place={place} imageSize={imageSize} />
+      <PlaceImage place={place} />
       <p>
         <b>{place.name}</b>
         {": " + place.description}

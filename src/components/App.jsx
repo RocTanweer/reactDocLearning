@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { ImageContext } from "../context/Context";
 import List from "./List.jsx";
 
 export default function App() {
@@ -6,7 +7,7 @@ export default function App() {
   const imageSize = isLarge ? 150 : 100;
 
   return (
-    <>
+    <ImageContext.Provider value={imageSize}>
       <label>
         <input
           type="checkbox"
@@ -18,7 +19,7 @@ export default function App() {
         Use large images
       </label>
       <hr />
-      <List imageSize={imageSize} />
-    </>
+      <List />
+    </ImageContext.Provider>
   );
 }
