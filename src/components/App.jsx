@@ -1,41 +1,21 @@
-import React, { useState } from "react";
-import Form from "./Form.jsx";
+import React from "react";
+import { useReducer } from "./MyReact";
+import Chat from "./Chat.jsx";
+import ContactList from "./ContactList.jsx";
+import { initialState, messengerReducer } from "./messengerReducer";
+import { contacts } from "./contacts";
 
 function App() {
-  const [showHint, setShowHint] = useState(false);
-  if (showHint) {
-    return (
-      <div>
-        <Form />
-      </div>
-    );
-  }
+  const [state, dispatch] = useReducer(messengerReducer, initialState);
+
+  const message = state.messages[state.selectedId];
+
+  const contact = contacts.find((c) => c.id === state.selectedId);
 
   return (
     <div>
-      {showHint && (
-        <p>
-          <i>Hint: Your favorite city?</i>
-        </p>
-      )}
-      <Form />
-      {showHint ? (
-        <button
-          onClick={() => {
-            setShowHint(false);
-          }}
-        >
-          Hide hint
-        </button>
-      ) : (
-        <button
-          onClick={() => {
-            setShowHint(true);
-          }}
-        >
-          Show hint
-        </button>
-      )}
+      <ContactList contacts={contacts} selectedId={state.selectedId} dispatch={dispatch} />
+      <Chat key={contact.id} message={message} contact={contact} dispatch={dispatch} />
     </div>
   );
 }
